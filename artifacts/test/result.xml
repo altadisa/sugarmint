@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="welcomemojit user tests" tests="1" failures="0" time="0.008"><testcase name="test mojit" time="0.002"></testcase></testsuite><testsuite name="welcomemojit-model user tests" tests="1" failures="0" time="0.004"><testcase name="test mojit model" time="0.001"></testcase></testsuite></testsuites>

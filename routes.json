@@ -1,0 +1,9 @@
+[{
+    "settings": [ "master" ],
+    "welcome index": {
+      "verbs": [ "get" ],
+      "path": "/",
+      "call": "welcome.index"
+    }
+
+}]

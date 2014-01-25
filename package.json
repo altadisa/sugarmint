@@ -1,0 +1,13 @@
+{
+    "name": "sugarmint",
+    "description": "My Mojito application",
+    "version": "0.0.1",
+    "author": "",
+    "contributors": [],
+    "dependencies": {
+        "mojito": ">0.6"
+    },
+    "engines": {
+        "node": ">0.8"
+    }
+}
