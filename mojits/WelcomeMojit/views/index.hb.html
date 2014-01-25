@@ -1,36 +1,57 @@
-<div id="{{mojit_view_id}}">
-    <dl>
-        <dt>status</dt>
-        <dd id="dd_status">{{status}}</dd>
-        <dt>data</dt>
-        <dd id="dd_data">
-            <b>some:</b> {{#data}}{{some}}{{/data}}
-        </dd>
-    </dl>
-</div>
-<div id="doc">
-    To learn more about Mojito, see the following:
-    <ul>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/intro/index.html">Introducing Mojito</a></li>
-        <li><a href="http://quickstartguide.trunk.development.manhattan.gq1.yahoo.com/">Mojito Quickstart Guide</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/getting_started/index.html">Getting Started With Mojito</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/dashboard_tutorial/index.html">Mojito Dashboard Tutorial</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/code_exs/index.html">Code Examples</a>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/topics/index.html">Developer Topics</a>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/api_overview/index.html">Mojito API Overview</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/faq/index.html">FAQ</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/reference/index.html">Mojito Reference</a></li>
-        <li><a href="http://developer.yahoo.com/cocktails/mojito/docs/resources/index.html">Additional Resources</a></li>
-    </ul>
-    <p>
-    You can also create the demo app <code>quickstartguide</code>, which is an example app that displays 
-    Mojito documentation, by running the following commands: 
-    <ul>
-        <li><code>$ mojito create demo quickstartguide qsg</code></li>
-        <li><code>$ cd qsg</code></li>
-        <li><code>$ mojito start</code></li>
-        <li>In a browser, navigate to the URL <a href="http://localhost:8666">localhost:8666</a>.</li>
-    </ul
-    </p>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SugarMint</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/WelcomeMojit/assets/index.css" />
+    <script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
+  </head>
+  <body class="yui3-skin-sam">
+    <div id="{{mojit_view_id}}">
+      <dl>
+      <dt>status</dt>
+      <dd id="dd_status">{{status}}</dd>
+      <dt>data</dt>
+      <dd id="dd_data">
+        <strong>some:</strong> {{#data}}{{some}}{{/data}}
+      </dd>
+      </dl>
+    </div>
+    <div id="doc">
+      <p class="sel"> <a href="http://beginsmarter.com:3000">SugarMint</a> </p>
+      <div id="demo">The time is?</div>
+        <script>
+          // Create a new YUI sandbox and load the "node" module.
+          YUI().use('node', function (Y) {
+              // YUI will call this function and pass in the YUI instance (Y) once all
+              // modules have finished loading and are ready to use.
+              // We can now use Y.Node to get references to DOM elements using CSS
+              // selectors.
+              var demo = Y.one('#demo');
+              // And we can listen for DOM events.
+              demo.on('click', function (e) {
+                  demo.set('text', (new Date())); // 'You clicked me!');
+              });
+          });
+          YUI({
+              combine: false,
+              filter: 'DEBUG',
+              ignore: ['cssbutton']
+          }).use('panel', function (Y) {
+              'use strict';
+          //Y.WidgetButtons.CLASS_NAMES.button = 'pure-button';
+          new Y.Panel({
+              bodyContent: 'Some Body Content',
+              buttons: [{
+                  action: 'hide',
+                  classNames: 'pure-button',
+                  label: 'Hide'
+              }],
+              headerContent: 'Some Header Content'
+          }).render();
+      });
+    </script>
+    </div>
+  </body>
+</html>

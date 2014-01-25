@@ -29,7 +29,7 @@ YUI.add('welcomemojit', function(Y, NAME) {
                 }
                 ac.assets.addCss('./index.css');
                 ac.done({
-                    status: 'Mojito is working.',
+                  status: 'Mojito served a sugarmint instance: ' + (new Date()) + '.',
                     data: data
                 });
             });
@@ -37,4 +37,6 @@ YUI.add('welcomemojit', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon']});
+}, '0.0.1', {requires: ['mojito',
+                        'mojito-assets-addon',
+                        'mojito-models-addon']});
